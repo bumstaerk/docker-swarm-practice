@@ -1,9 +1,11 @@
 services:
   node-app:
-    image: ghcr.io/bumstaerk/docker-swarm-practice:latest
+    build: .
+    #    image: ghcr.io/bumstaerk/docker-swarm-practice:latest
     container_name: node-appz
     environment:
       INSTANCE: "compose"
+      PORT: "${PORT}"
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
 
